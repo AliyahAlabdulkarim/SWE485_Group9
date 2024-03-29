@@ -6,9 +6,13 @@ class Test:
     
     
     def evaluate(self,cost_matrix):
-            ans_pos = self.hun.hungarian_algorithm(cost_matrix.copy())#Get the element position.
-            ans, ans_mat = self.hun.ans_calculation(cost_matrix, ans_pos)#Get the minimum value and corresponding matrix.
+            # Get the element position using Hungarian algorithm
+            ans_pos = self.hun.hungarian_algorithm(cost_matrix.copy())
+            # Calculate the matrix cost.
+            ans = self.hun.ans_calculation(cost_matrix, ans_pos)
+            # Generate the binary assignment problem result matrix
             ans_mat_binary = self.hun.ans_calculation_binary(cost_matrix, ans_pos)
+
 
             #Show the result
             print(f"Binary Assignment problem result:\n{ans_mat_binary}")
