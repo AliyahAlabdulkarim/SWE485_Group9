@@ -127,29 +127,3 @@ class HungarianAlgorithm:
 		for i in range(len(pos)):
 			ans_mat[pos[i][0], pos[i][1]] = 1
 		return ans_mat
-
-	# def main():
-
-	# 	'''Hungarian Algorithm: 
-	# 	Finding the minimum value in linear assignment problem.
-	# 	Therefore, we can find the minimum value set in net matrix 
-	# 	by using Hungarian Algorithm. In other words, the maximum value
-	# 	and elements set in cost matrix are available.'''
-
-	# 	#The matrix who you want to find the minimum sum
-	# cost_matrix = np.array([[7, 6, 2, 9, 2],
-	# 							[6, 2, 1, 3, 9],
-	# 							[5, 6, 8, 9, 5],
-	# 							[6, 8, 5, 8, 6],
-	# 							[9, 5, 6, 4, 7]])
-	# ans_pos = hungarian_algorithm(cost_matrix.copy())#Get the element position.
-	# ans, ans_mat = ans_calculation(cost_matrix, ans_pos)#Get the minimum value and corresponding matrix.
-	# ans_mat_binary = ans_calculation_binary(cost_matrix, ans_pos)
-
-	# 	#Show the result
-	# print(f"Linear Assignment problem result:\n{ans_mat}")
-	# print(f"Binary Assignment problem result:\n{ans_mat_binary}")
-	# print(f"Assignment problem cost result: {ans:.0f}")
-
-	# if __name__ == '__main__':
-	# 	main()
