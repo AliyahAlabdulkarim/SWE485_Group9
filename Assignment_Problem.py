@@ -1,6 +1,7 @@
 import numpy as np
 
 class HungarianAlgorithm:
+    
 	def min_zero_row(self, zero_mat, mark_zero):
 		
 		'''
@@ -24,7 +25,6 @@ class HungarianAlgorithm:
 		zero_mat[:, zero_index] = False # Set the entire column to False
 
 	def mark_matrix(self, mat):
-
 		'''
 		Finding the returning possible solutions for the Assignment problem.
 		'''
@@ -48,7 +48,6 @@ class HungarianAlgorithm:
 
 		# Determine the non-marked rows and columns
 		non_marked_row = list(set(range(cur_mat.shape[0])) - set(marked_zero_row))
-		
 		marked_cols = []
 		check_switch = True
 		while check_switch:
@@ -66,11 +65,9 @@ class HungarianAlgorithm:
 					check_switch = True
 
 		marked_rows = list(set(range(mat.shape[0])) - set(non_marked_row))
-
 		return(marked_zero, marked_rows, marked_cols)
 
 	def adjust_matrix(self,mat, cover_rows, cover_cols):
-     
 		'''
 		Adjust the input matrix based on the covered rows and columns.
 		'''
@@ -99,7 +96,6 @@ class HungarianAlgorithm:
 		return cur_mat
 
 	def hungarian_algorithm(self,mat): 
-    	
 		'''
 		Implementation of the Hungarian Algorithm to solve the Assignment Problem.
 		'''
@@ -127,7 +123,7 @@ class HungarianAlgorithm:
 
 		return ans_pos
 
-	def ans_calculation(self,mat, pos):
+	def cost_calculation(self,mat, pos):
 		'''
         Calculate the total cost of the matrix,
         '''
@@ -139,7 +135,7 @@ class HungarianAlgorithm:
 		return total
 
 	   
-	def ans_calculation_binary(self,mat, pos):
+	def binary_matrix(self,mat, pos):
 		'''
         Generate the binary form of the matrix,
         ''' 

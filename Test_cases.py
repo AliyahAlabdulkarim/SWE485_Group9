@@ -4,16 +4,16 @@ import numpy as np
 class Test:
     hun=Assignment_Problem.HungarianAlgorithm()
     
-    
     def evaluate(self,cost_matrix):
+            '''
+            Evaluate the performance of the Hungarian algorithm on a given cost matrix.
+            '''
             # Get the element position using Hungarian algorithm
             ans_pos = self.hun.hungarian_algorithm(cost_matrix.copy())
             # Calculate the matrix cost.
-            ans = self.hun.ans_calculation(cost_matrix, ans_pos)
+            ans = self.hun.cost_calculation(cost_matrix, ans_pos)
             # Generate the binary assignment problem result matrix
-            ans_mat_binary = self.hun.ans_calculation_binary(cost_matrix, ans_pos)
-
-
+            ans_mat_binary = self.hun.binary_matrix(cost_matrix, ans_pos)
             #Show the result
             print(f"Binary Assignment problem result:\n{ans_mat_binary}")
             print(f"Assignment problem cost result: {ans:.0f}")
@@ -74,7 +74,12 @@ class Test:
             print(array_30x30)
             self.evaluate(array_30x30)         
             
+            
+            
     def main(self):
+     '''
+     Perform the testing by calling the test cases
+     '''
      np.random.seed(42)
      self.testcase1()
      self.testcase2()
