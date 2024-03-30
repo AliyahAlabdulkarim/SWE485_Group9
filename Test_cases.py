@@ -22,14 +22,15 @@ class Test:
         # Calculate the matrix cost
         ans = self.hun.cost_calculation(cost_matrix, ans_pos)
         
+        
+        # Generate the binary assignment problem result matrix
+        ans_mat_binary = self.hun.binary_matrix(cost_matrix, ans_pos)
+
         # Record end time
         end_time = time.time()
         
         # Calculate computational time
         computational_time = end_time - start_time
-        
-        # Generate the binary assignment problem result matrix
-        ans_mat_binary = self.hun.binary_matrix(cost_matrix, ans_pos)
         
         # Show the result including computational time
         print(f"Binary Assignment problem result:\n{ans_mat_binary}")
