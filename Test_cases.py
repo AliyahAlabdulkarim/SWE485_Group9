@@ -4,19 +4,40 @@ import numpy as np
 class Test:
     hun=Assignment_Problem.HungarianAlgorithm()
     
-    def evaluate(self,cost_matrix):
-            '''
-            Evaluate the performance of the Hungarian algorithm on a given cost matrix.
-            '''
-            # Get the element position using Hungarian algorithm
-            ans_pos = self.hun.hungarian_algorithm(cost_matrix.copy())
-            # Calculate the matrix cost.
-            ans = self.hun.cost_calculation(cost_matrix, ans_pos)
-            # Generate the binary assignment problem result matrix
-            ans_mat_binary = self.hun.binary_matrix(cost_matrix, ans_pos)
-            #Show the result
-            print(f"Binary Assignment problem result:\n{ans_mat_binary}")
-            print(f"Assignment problem cost result: {ans:.0f}")
+import time
+
+class Test:
+    hun = Assignment_Problem.HungarianAlgorithm()
+    
+    def evaluate(self, cost_matrix):
+        '''
+        Evaluate the performance of the Hungarian algorithm on a given cost matrix.
+        '''
+        # Record start time
+        start_time = time.time()
+        
+        # Get the element position using Hungarian algorithm
+        ans_pos = self.hun.hungarian_algorithm(cost_matrix.copy())
+        
+        # Calculate the matrix cost
+        ans = self.hun.cost_calculation(cost_matrix, ans_pos)
+        
+        # Record end time
+        end_time = time.time()
+        
+        # Calculate computational time
+        computational_time = end_time - start_time
+        
+        # Generate the binary assignment problem result matrix
+        ans_mat_binary = self.hun.binary_matrix(cost_matrix, ans_pos)
+        
+        # Show the result including computational time
+        print(f"Binary Assignment problem result:\n{ans_mat_binary}")
+        print(f"Assignment problem cost result: {ans:.0f}")
+        print(f"Computational time: {computational_time} seconds")
+            
+    # Your other test case methods remain the same...
+
             
     def testcase1(self):
             array_5x5 = np.random.randint(0, 100, size=(5, 5))
