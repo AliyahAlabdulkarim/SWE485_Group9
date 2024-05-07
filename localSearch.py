@@ -69,7 +69,7 @@ class LocalSearch:
 
     @staticmethod
     def generate_random_above_10():
-        return random.randint(10, 40)
+        return random.randint(9, 9)
 
 # Test the local search algorithm
 if __name__ == "__main__":
@@ -77,6 +77,7 @@ if __name__ == "__main__":
     size = LocalSearch.generate_random_above_10()
     cost_matrix = np.random.randint(0, 100, size=(size, size))
     print("Cost matrix:")
+    print("Cost matrix of size", size,"x", size)
     print(cost_matrix)
 
     local_search = LocalSearch()
@@ -84,7 +85,7 @@ if __name__ == "__main__":
 
     print("\nBest assignment found:")
     print(best_assignment)
-    print("Best cost:", best_cost)
+    print("Assignment problem best cost result:", best_cost)
 
     binary_matrix = local_search.binary_assignment_matrix(best_assignment, cost_matrix.shape[0], cost_matrix.shape[1])
     print("\nBinary assignment matrix:")
